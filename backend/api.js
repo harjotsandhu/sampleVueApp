@@ -1,9 +1,9 @@
-var items = require('./Items.js');
+var Items = require('./Items.js');
 
 exports.items = function (req, res) {
-  res.json(items);
+  res.json(Items);
 };
 
 exports.item = function (req, res) {
-  res.json(items[req.param.itemId]);
+  res.json(Items[req.param.itemId]);
 };

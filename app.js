@@ -25,16 +25,17 @@ new Vue({
     },
 
     addItem: function () {
-      if (this.item.name.trim()) {
+
         this.$http.post('/api/items', this.item)
           .success(function (res) {
             this.items.push(this.item);
             console.log('item added!');
+            let startItem =  { name: '', price: '', detail: '', date: '', quantity: '' };
+            this.item =startItem;
           })
           .error(function (err) {
             console.log(err);
           });
-      }
     },
 
     deleteItem: function (index) {
